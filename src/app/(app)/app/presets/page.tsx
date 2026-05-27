@@ -5,7 +5,7 @@ import { prisma } from "@/lib/prisma";
 
 export default async function PresetsPage() {
   const user = await requireUser();
-  const presets = await prisma.preset.findMany({ where: { userId: user.id }, orderBy: { updatedAt: "desc" } });
+  const presets = await prisma.preset.findMany({ where: { userId: user.id }, orderBy: { updatedAt: "desc" } }).catch(() => []);
   return (
     <div className="space-y-6">
       <div>
