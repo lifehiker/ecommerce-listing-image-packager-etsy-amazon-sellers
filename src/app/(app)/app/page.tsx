@@ -9,8 +9,8 @@ import { getMonthlyImageUsage } from "@/lib/usage";
 export default async function DashboardPage() {
   const user = await requireUser();
   const [usage, packs] = await Promise.all([
-    getMonthlyImageUsage(user.id),
-    prisma.imagePack.findMany({ where: { userId: user.id }, orderBy: { updatedAt: "desc" }, take: 8 }),
+    getMonthlyImageUsage(user.id).catch(() => 0),
+    prisma.imagePack.findMany({ where: { userId: user.id }, orderBy: { updatedAt: "desc" }, take: 8 }).catch(() => []),
   ]);
   return (
     <div className="space-y-6">
