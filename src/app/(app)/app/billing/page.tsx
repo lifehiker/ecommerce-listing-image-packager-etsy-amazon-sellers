@@ -6,7 +6,7 @@ import { getMonthlyImageUsage } from "@/lib/usage";
 
 export default async function BillingPage() {
   const user = await requireUser();
-  const used = await getMonthlyImageUsage(user.id);
+  const used = await getMonthlyImageUsage(user.id).catch(() => 0);
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between gap-3">
