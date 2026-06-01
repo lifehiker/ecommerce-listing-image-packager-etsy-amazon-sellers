@@ -8,7 +8,7 @@ export async function getCurrentUser() {
 
   return prisma.user.findUnique({
     where: { id: session.user.id },
-  });
+  }).catch(() => null);
 }
 
 export async function requireUser() {
