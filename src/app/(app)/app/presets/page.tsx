@@ -1,11 +1,13 @@
 import { PresetForm } from "@/components/presets/preset-form";
 import { PresetList } from "@/components/presets/preset-list";
-import { requireUser } from "@/lib/auth";
+import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 
 export default async function PresetsPage() {
-  const user = await requireUser();
-  const presets = await prisma.preset.findMany({ where: { userId: user.id }, orderBy: { updatedAt: "desc" } }).catch(() => []);
+  const user = await getCurrentUser();
+  const presets = user
+    ? await prisma.preset.findMany({ where: { userId: user.id }, orderBy: { updatedAt: "desc" } }).catch(() => [])
+    : [];
   return (
     <div className="space-y-6">
       <div>
