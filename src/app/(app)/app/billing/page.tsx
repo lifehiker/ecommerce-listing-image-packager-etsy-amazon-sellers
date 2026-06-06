@@ -1,11 +1,12 @@
 import { PlanCard } from "@/components/billing/plan-card";
 import { UsageLimits } from "@/components/billing/usage-limits";
 import { Badge } from "@/components/ui/badge";
-import { requireUser } from "@/lib/auth";
+import { getCurrentUser } from "@/lib/auth";
 import { getMonthlyImageUsage } from "@/lib/usage";
 
 export default async function BillingPage() {
-  const user = await requireUser();
+  const user = await getCurrentUser();
+  if (!user) return null;
   const used = await getMonthlyImageUsage(user.id).catch(() => 0);
   return (
     <div className="space-y-6">
