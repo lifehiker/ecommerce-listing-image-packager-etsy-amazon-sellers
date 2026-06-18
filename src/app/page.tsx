@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 import { ArrowRight, FileArchive, Images, ShieldCheck } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
