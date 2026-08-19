@@ -49,7 +49,9 @@
   "overrides": {
     "sharp": "$sharp",
     "next": {
-      "postcss": "8.5.10"
-    }
+      "postcss": "8.5.23"
+    },
+    "deepmerge-ts": "^8.0.0",
+    "postcss@8": "^8.5.23"
   }
 }
