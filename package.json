@@ -21,14 +21,14 @@
     "jszip": "^3.10.1",
     "lucide-react": "^1.16.0",
     "nanoid": "^5.1.11",
-    "next": "^15.5.18",
+    "next": "^15.5.27",
     "next-auth": "^5.0.0-beta.31",
     "prisma": "^7.0.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-hook-form": "^7.76.1",
     "resend": "^6.12.4",
-    "sharp": "^0.35.0",
+    "sharp": "^0.35.5",
     "stripe": "^22.1.1",
     "tailwind-merge": "^3.6.0",
     "zod": "^4.4.3",
@@ -42,7 +42,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.6",
+    "eslint-config-next": "^15.5.27",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
@@ -53,6 +53,10 @@
     },
     "deepmerge-ts": "^8.0.0",
     "postcss@8": "^8.5.23",
-    "mysql2": "^3.23.1"
+    "mysql2": "^3.23.1",
+    "js-yaml": "^4.3.2",
+    "brace-expansion@5": "^5.0.12",
+    "brace-expansion@1": "^1.1.21",
+    "fast-uri@3": "^3.1.8"
   }
 }
